@@ -17,12 +17,12 @@
          }
          
          /**
-          * Функция подключения к БД MySQL
+          * Подключение к БД MySQL
           * @param string $server IP- или DNS-адрес MySQL сервера
           * @param string $username Имя пользователя
           * @param string $password Пароль
           * @param string $database Имя базы данных
-          * @return boolean <b>true</b> в 
+          * @return bool <b>true</b> в 
           * случае удачного подключения, <b>false</b> - в противном случае.
           */
          public function mysql_db_connect($server, $username, $password, $database) {
