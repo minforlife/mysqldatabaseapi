@@ -16,8 +16,27 @@
              ;
          }
          
-         public function mysql_db_connect() {
-             ;
+         /**
+          * Функция подключения к БД MySQL
+          * @param string $server IP- или DNS-адрес MySQL сервера
+          * @param string $username Имя пользователя
+          * @param string $password Пароль
+          * @param string $database Имя базы данных
+          * @return boolean <b>true</b> в 
+          * случае удачного подключения, <b>false</b> - в противном случае.
+          */
+         public function mysql_db_connect($server, $username, $password, $database) {
+             if((isset($server)) && (isset($username)) && 
+                (isset($password)) && (isset($database))) {
+                 if((@mysql_connect($server, $username, $password)) &&
+                    (@mysql_select_db($database))) {
+                    return true;
+                 } else {
+                     return false;
+                 }
+             } else {
+                 return false;
+             }
          }
      }
 ?>
